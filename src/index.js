@@ -4,10 +4,20 @@ import 'bootstrap/dist/css/bootstrap.css.min';
 import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import rootReducer from './reducers/index';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import Container from 'react-bootstrap/Container';
+
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Container fluid>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Container>
   </React.StrictMode>,
   document.getElementById('root')
 );
