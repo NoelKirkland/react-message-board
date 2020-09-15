@@ -28,4 +28,29 @@ describe('postsListReducer', () => {
     expect(postsListReducer({}, action)).toEqual({});
     expect(postsListReducer(testState, action)).toEqual(testState);
   });
+
+  test('should add a post successfully', ()=>{
+    action = {
+      type: "ADD_POST",
+      title: 'Whatever, man',
+      body: 'I cant even with this whole forum',
+      score: -50,
+      date: new Date(),
+      id: 3,
+      threadId: 1,
+      topicId: 1
+    }
+
+    expect(postsListReducer({}, action)).toEqual({
+      3: {
+        title: 'Whatever, man',
+        body: 'I cant even with this whole forum',
+        score: -50,
+        date: new Date(),
+        id: 3,
+        threadId: 1,
+        topicId: 1
+      }
+    });
+  });
 });
