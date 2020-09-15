@@ -13,6 +13,10 @@ export default (state = {}, action) => {
           topicId
         }
       });
+    case 'DELETE_POST':
+      const newState = {...state};
+      delete newState[id];
+      return newState;
     default:
       return state;
   }

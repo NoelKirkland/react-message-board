@@ -2,11 +2,12 @@ import postsListReducer from './../reducers/posts-list-reducer';
 
 describe('postsListReducer', () => {
   let action;
+  const testDate = new Date();
   const testState = {
     1: {
       title: 'Pastafarianism is the most rational religion',
       body: 'example body text',
-      date: new Date(),
+      date: testDate,
       score: 0,
       id: 1,
       threadId: 1, 
@@ -15,7 +16,7 @@ describe('postsListReducer', () => {
     2: {
       title: 'Pastafarianism makes no sense',
       body: 'example body text',
-      date: new Date(),
+      date: testDate,
       score: 0,
       id: 2,
       threadId: 1,
@@ -35,7 +36,7 @@ describe('postsListReducer', () => {
       title: 'Whatever, man',
       body: 'I cant even with this whole forum',
       score: -50,
-      date: new Date(),
+      date: testDate,
       id: 3,
       threadId: 1,
       topicId: 1
@@ -46,11 +47,29 @@ describe('postsListReducer', () => {
         title: 'Whatever, man',
         body: 'I cant even with this whole forum',
         score: -50,
-        date: new Date(),
+        date: testDate,
         id: 3,
         threadId: 1,
         topicId: 1
       }
     });
   });
+
+  test('Should successfully delete a post', ()=>{
+    action = {
+      type: 'DELETE_POST',
+      id: 1
+    };
+    expect(postsListReducer(testState, action)).toEqual({
+      2: {
+        title: 'Pastafarianism makes no sense',
+        body: 'example body text',
+        date: testDate,
+        score: 0,
+        id: 2,
+        threadId: 1,
+        topicId: 1
+      }
+    });
+  })
 });
