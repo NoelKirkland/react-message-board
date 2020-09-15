@@ -1,4 +1,14 @@
-export default (state = {}, action) => {
+const topic1 = {
+  name: 'Politics',
+  id: 'topic1'
+}
+const topic2 = {
+  name: 'Religion',
+  id: 'topic2'
+}
+
+
+export default (state = {topic1, topic2}, action) => {
   const {name, threads, id} = action;
   switch (action.type) {
     case 'ADD_TOPIC':

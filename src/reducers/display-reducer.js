@@ -5,8 +5,14 @@ const defaultState = {
 }
 
 export default (state=defaultState, action) => {
-  const {page, topicId, threadId} = action;
+  const { topicId, threadId} = action;
   switch (action.type) {
+    case 'VIEW_INDEX':
+      return {
+        page: 'index',
+        topicId: null,
+        threadId: null
+      }
     case 'VIEW_TOPIC': 
       return {
         page: 'index',
