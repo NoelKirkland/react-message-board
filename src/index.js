@@ -1,23 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css.min';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-import rootReducer from './reducers/index';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 import Container from 'react-bootstrap/Container';
+import { Provider } from 'react-redux';
+import store from './store';
 
-const store = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    <Container fluid>
-      <Provider store={store}>
+    <Provider store={store}>
+      <Container fluid>
         <App />
-      </Provider>
-    </Container>
+      </Container>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

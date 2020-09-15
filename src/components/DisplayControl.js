@@ -1,25 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import TopicIndex from './TopicIndex';
 
-class DisplayControl extends React.Component {
-
+function DisplayControl(props) {
+  let pageToDisplay;
+  const { page, topicId, threadId } = props.display;
+  if (page === 'index' && !topicId && !threadId) {
+    pageToDisplay = <TopicIndex />;
+  }
+  return (
+    <React.Fragment>
+      {pageToDisplay}
+    </React.Fragment>
+  )
 }
 
 DisplayControl.propTypes = {
-  topicsList: PropTypes.object,
-  threadsList: PropTypes.object,
-  postsList: PropTypes.object
+  display: PropTypes.object
 }
 
 const mapStateToProps = (state) => {
   return {
-    topicsList: state['topicsList'],
-    threadsList: state['threadsList'],
-    postsList: state['postsList']
+    display: state['display']
   }
 }
 
-DisplayControl = connect(mapStateToProps)(DisplayControl);
-
-export default DisplayControl;
+export default connect(mapStateToProps)(DisplayControl);
