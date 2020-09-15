@@ -27,4 +27,14 @@ describe('rootReducer', ()=>{
   test('check that initial state of postsList matches rootReducer', () => {
     expect(store.getState().postsList).toEqual(postsListReducer(undefined, nullAction));
   });
+
+  test('check that adding a topic via dispatch matches the expected action', ()=>{
+    const action = {
+      type: 'ADD_TOPIC',
+      name: 'POLITICS',
+      id: 1
+    }
+    store.dispatch(action);
+    expect(store.getState().topicsList).toEqual(topicsListReducer({}, action));
+  });
 });
