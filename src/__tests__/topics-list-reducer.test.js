@@ -21,4 +21,21 @@ describe('topicsListReducer', ()=>{
       }
     });
   });
+
+  test('should be able to delete a topic', ()=>{
+    const action = {
+      type: "ADD_TOPIC",
+      name: 'Politics',
+      threads: {},
+      id: 1
+    };
+
+    const testState = topicsListReducer({}, action);
+    const deleteAction = {
+      type: 'DELETE_TOPIC',
+      id: 1
+    }
+
+    expect(topicsListReducer(testState, deleteAction)).toEqual({});
+  })
 });
