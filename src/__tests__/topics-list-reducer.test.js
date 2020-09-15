@@ -9,14 +9,12 @@ describe('topicsListReducer', ()=>{
     const action = {
       type: "ADD_TOPIC",
       name: 'Politics',
-      threads: {},
       id: 1
     };
 
     expect(topicsListReducer({}, action)).toEqual({
       1: {
         name: 'Politics',
-        threads: {},
         id: 1
       }
     });
@@ -26,7 +24,6 @@ describe('topicsListReducer', ()=>{
     const action = {
       type: "ADD_TOPIC",
       name: 'Politics',
-      threads: {},
       id: 1
     };
 
