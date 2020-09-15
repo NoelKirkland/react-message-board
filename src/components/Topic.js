@@ -11,10 +11,10 @@ function Topic(props){
       <h2>{topic.name}</h2>
       {threadsList.map((thread) => {
         return (
-          <h5 key={thread.id}>{thread.name}</h5>
+          <h5 key={thread.id} onClick={()=>props.dispatch({type: "VIEW_THREAD", topicId: topic.id, threadId: thread.id})}>{thread.name}</h5>
         )
       })}
-      <Button variant="outline-success" onClick={()=> props.dispatch({type: "VIEW_INDEX"})}>Back to Topic Index</Button>
+      <Button variant="outline-success" onClick={()=> props.dispatch({type: "VIEW_INDEX"})}>Back to All Topics</Button>
     </React.Fragment>
   )
 }
