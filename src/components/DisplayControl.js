@@ -7,6 +7,7 @@ import Topic from './Topic';
 import Thread from './Thread';
 import AddTopic from './AddTopic';
 import EditTopic from './EditTopic';
+import AddThread from './AddThread';
 
 function DisplayControl(props) 
 {
@@ -28,6 +29,9 @@ function DisplayControl(props)
       break;
     case 'edit-topic':
       pageToDisplay = <EditTopic id = {topicId} />
+      break;
+    case 'create-thread':
+      pageToDisplay = <AddThread topicId = { topicId } />
       break;
     default:
       pageToDisplay = <TopicIndex />;

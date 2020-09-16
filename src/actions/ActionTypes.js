@@ -12,6 +12,8 @@ export const EDIT_TOPIC = 'EDIT_TOPIC';
 
 export const DELETE_TOPIC = "DELETE_TOPIC";
 
+export const CREATE_THREAD = "CREATE_THREAD";
+
 export const ADD_THREAD = "ADD_THREAD";
 
 export const DELETE_THREAD = "DELETE_THREAD";

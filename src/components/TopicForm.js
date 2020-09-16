@@ -17,7 +17,7 @@ function TopicForm(props) {
           <Form.Label>Topic Name</Form.Label>
           <Form.Control type='text' placeholder='Topic Name' defaultValue = {defaultName} required />
         </Form.Group>
-        <Button variant='outline-success' type='submit' >{buttonText}</Button>
+        <Button className="mb-2 mt-2" variant='outline-success' type='submit' >{buttonText}</Button>
       </Form>
       <Button variant='outline-info' type='button' onClick={()=>onLinkClick()}>Back To Index</Button>
     </React.Fragment>

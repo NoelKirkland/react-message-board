@@ -83,3 +83,9 @@ export const viewThread = (topicId, threadId) => ({
   topicId,
   threadId
 });
+
+export const createThread = (topicId) => ({
+  type: c.CREATE_THREAD,
+  topicId,
+  threadId: null
+});
