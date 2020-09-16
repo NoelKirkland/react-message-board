@@ -20,7 +20,7 @@ function EditThread(props) {
   return (
     <ThreadForm
       handleSubmitForm = {handleEditingThread}
-      onLinkClick = {() => a.viewThread(topicId, id)}
+      onLinkClick = {() => dispatch(a.viewThread(topicId, id))}
       buttonText = "Edit this thread"
       defaultThreadName = {name} />
   )

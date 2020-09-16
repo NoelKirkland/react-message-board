@@ -9,12 +9,14 @@ import AddTopic from './AddTopic';
 import EditTopic from './EditTopic';
 import AddThread from './AddThread';
 import EditThread from './EditThread';
+import AddPost from './AddPost';
+import EditPost from './EditPost';
 
 function DisplayControl(props) 
 {
   store.subscribe(() => console.log(store.getState()));
   let pageToDisplay;
-  const { page, topicId, threadId } = props.display;
+  const { page, topicId, threadId, postId } = props.display;
   switch (page) {
     case 'index':
       if (!topicId && !threadId) {
@@ -36,6 +38,12 @@ function DisplayControl(props)
       break;
     case 'edit-thread':
       pageToDisplay = <EditThread threadId = { threadId} />
+      break;
+    case 'create-post':
+      pageToDisplay = <AddPost id = {threadId} />
+      break;
+    case 'edit-post':
+      pageToDisplay = <EditPost id = {postId} />
       break;
     default:
       pageToDisplay = <TopicIndex />;

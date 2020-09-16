@@ -16,9 +16,11 @@ function Thread(props){
             <p>{post.body}</p>
             <p>{post.date}</p>
             <p>{post.score}</p>
+            <Button variant='outline-primary' onClick={()=>dispatch(a.editPost(post.id))}>Edit Post</Button>
           </div>
         )
       })}
+      <Button variant="outline-warning" onClick={()=>dispatch(a.createPost(thread.id))}>Create Post</Button>
       <Button variant='outline-info' onClick={()=>dispatch(a.editThread(thread.id))}>Edit This Thread</Button>
       <Button className="ml-2" variant='outline-dark' onClick={()=>dispatch(a.deleteThread(thread.id))}>Delete This Thread</Button>
       <Button className= " ml-2 mr-2" variant='outline-success' onClick={()=>{dispatch(a.viewIndex())}}>Back To All Topics</Button>

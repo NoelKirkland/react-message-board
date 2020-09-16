@@ -20,7 +20,7 @@ function AddThread(props) {
   return(
     <ThreadForm
       handleSubmitForm = {handleAddNewThread}
-      onLinkClick = {() => a.viewTopic(topicId)}
+      onLinkClick = {() => dispatch(a.viewTopic(topicId))}
       buttonText = "Add New Thread" />
   )
 }

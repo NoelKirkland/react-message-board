@@ -20,6 +20,10 @@ export const EDIT_THREAD = "EDIT_THREAD";
 
 export const DELETE_THREAD = "DELETE_THREAD";
 
+export const CREATE_POST = "CREATE_POST";
+
 export const ADD_POST = "ADD_POST";
+
+export const EDIT_POST = "EDIT_POST";
 
 export const DELETE_POST = "DELETE_POST";

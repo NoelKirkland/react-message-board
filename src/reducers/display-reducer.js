@@ -7,7 +7,7 @@ const defaultState = {
 }
 
 export default (state=defaultState, action) => {
-  const { topicId, threadId} = action;
+  const { topicId, threadId, postId } = action;
   switch (action.type) {
     case c.VIEW_INDEX:
       return {
@@ -50,6 +50,19 @@ export default (state=defaultState, action) => {
         page: 'edit-thread',
         topicId: null,
         threadId
+      }
+    case c.CREATE_POST:
+      return {
+        page: 'create-post',
+        topicId: null,
+        threadId
+      }
+    case c.EDIT_POST:
+      return {
+        page: 'edit-post',
+        topicId: null,
+        threadId: null,
+        postId
       }
     default:
       return state;

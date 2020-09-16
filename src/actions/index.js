@@ -95,3 +95,16 @@ export const editThread = (threadId) => ({
   topicId: null,
   threadId
 });
+
+export const createPost = (threadId) => ({
+  type: c.CREATE_POST,
+  topicId: null,
+  threadId
+});
+
+export const editPost = (postId) => ({
+  type: c.EDIT_POST,
+  topicId: null,
+  threadId: null,
+  postId
+});
