@@ -8,6 +8,8 @@ export const CREATE_TOPIC = "CREATE_TOPIC";
 
 export const ADD_TOPIC = "ADD_TOPIC";
 
+export const EDIT_TOPIC = 'EDIT_TOPIC';
+
 export const DELETE_TOPIC = "DELETE_TOPIC";
 
 export const ADD_THREAD = "ADD_THREAD";

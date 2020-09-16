@@ -6,7 +6,10 @@ import * as a from './../actions/index';
 
 function Topic(props){
   const { topic, threadsList, dispatch } = props;
-  
+  const handleDeleteTopic = () => {
+    dispatch(a.deleteTopic(topic.id));
+    dispatch(a.viewIndex());
+  }
   return(
     <React.Fragment>
       <h2>{topic.name}</h2>
@@ -15,6 +18,8 @@ function Topic(props){
           <h5 key={thread.id} onClick={()=> dispatch(a.viewThread(topic.id, thread.id))}>{thread.name}</h5>
         )
       })}
+      <Button variant='outline-warning' type='button' onClick={()=>dispatch(a.editTopic(topic.id))}>Edit Topic</Button>
+      <Button variant='outline-danger' type='button' onClick={handleDeleteTopic}>Delete Topic</Button>
       <Button variant="outline-success" onClick={()=> dispatch(a.viewIndex())}>Back to All Topics</Button>
     </React.Fragment>
   )

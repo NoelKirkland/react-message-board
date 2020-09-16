@@ -20,6 +20,7 @@ function EditTopic(props){
     <TopicForm 
       onSubmitForm = {handleEditingTopic}
       onLinkClick = {() => dispatch(a.viewIndex())}
+      buttonText = "Edit This Topic"
       defaultName = {name} />
   )
 }
@@ -28,4 +29,12 @@ EditTopic.propTypes = {
   topic: PropTypes.object
 }
 
-export default connect()(EditTopic);
+const mapStateToProps = (state, ownProps) => {
+  const { id } = ownProps;
+  const topic = state['topicsList'][id];
+  return ({
+    topic
+  })
+}
+
+export default connect(mapStateToProps)(EditTopic);

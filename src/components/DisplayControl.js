@@ -6,20 +6,31 @@ import TopicIndex from './TopicIndex';
 import Topic from './Topic';
 import Thread from './Thread';
 import AddTopic from './AddTopic';
+import EditTopic from './EditTopic';
 
 function DisplayControl(props) 
 {
   store.subscribe(() => console.log(store.getState()));
   let pageToDisplay;
   const { page, topicId, threadId } = props.display;
-  if (page === 'index' && !topicId && !threadId) {
-    pageToDisplay = <TopicIndex />;
-  } else if (page === 'index' && topicId && !threadId) {
-    pageToDisplay = <Topic id = {topicId} />;
-  } else if (page === 'index' && topicId && threadId) {
-    pageToDisplay = <Thread id = {threadId} />
-  } else if (page === 'create-topic') {
-    pageToDisplay = <AddTopic />
+  switch (page) {
+    case 'index':
+      if (!topicId && !threadId) {
+        pageToDisplay = <TopicIndex />;
+      } else if (!threadId) {
+        pageToDisplay = <Topic id = {topicId} />;
+      } else {
+        pageToDisplay = <Thread id = {threadId} />
+      }
+      break;
+    case 'create-topic':
+      pageToDisplay = <AddTopic />
+      break;
+    case 'edit-topic':
+      pageToDisplay = <EditTopic id = {topicId} />
+      break;
+    default:
+      pageToDisplay = <TopicIndex />;
   }
   return (
     <React.Fragment>

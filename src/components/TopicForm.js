@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 
 function TopicForm(props) {
-  const { onSubmitForm, onLinkClick, defaultName } = props;
+  const { onSubmitForm, onLinkClick, buttonText, defaultName } = props;
   const handleSubmitForm = (event) => {
     event.preventDefault();
     onSubmitForm(event);
@@ -17,7 +17,7 @@ function TopicForm(props) {
           <Form.Label>Topic Name</Form.Label>
           <Form.Control type='text' placeholder='Topic Name' defaultValue = {defaultName} required />
         </Form.Group>
-        <Button variant='outline-success' type='submit' >Add This Topic</Button>
+        <Button variant='outline-success' type='submit' >{buttonText}</Button>
       </Form>
       <Button variant='outline-info' type='button' onClick={()=>onLinkClick()}>Back To Index</Button>
     </React.Fragment>
@@ -27,6 +27,7 @@ function TopicForm(props) {
 TopicForm.propTypes = {
   onSubmitForm: PropTypes.func,
   onLinkClick: PropTypes.func,
+  buttonText: PropTypes.string,
   defaultName: PropTypes.string
 }
 

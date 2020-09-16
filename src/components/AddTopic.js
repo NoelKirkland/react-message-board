@@ -18,7 +18,8 @@ function AddTopic(props) {
   return (
     <TopicForm
       onSubmitForm = {handleAddingNewTopic}
-      onLinkClick = {() => dispatch(a.viewIndex())} />
+      onLinkClick = {() => dispatch(a.viewIndex())}
+      buttonText = "Add This Topic" />
   )
 }
 

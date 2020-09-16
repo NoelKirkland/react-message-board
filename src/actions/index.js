@@ -1,11 +1,7 @@
 import * as c from './ActionTypes';
 
-export const createTopic = () => ({
-  type: c.CREATE_TOPIC,
-  topicId: null,
-  threadId: null
-});
 
+//For Editting Action
 export const addTopic = (newTopic) => {
   const { name, id } = newTopic;
   return ({
@@ -56,9 +52,23 @@ export const deletePost = (id) => ({
   id
 });
 
+
+//For updating Views
 export const viewIndex = () => ({
   type: c.VIEW_INDEX,
   topicId: null,
+  threadId: null
+});
+
+export const createTopic = () => ({
+  type: c.CREATE_TOPIC,
+  topicId: null,
+  threadId: null
+});
+
+export const editTopic = (topicId) => ({
+  type: c.EDIT_TOPIC,
+  topicId,
   threadId: null
 });
 

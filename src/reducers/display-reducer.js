@@ -33,6 +33,12 @@ export default (state=defaultState, action) => {
         topicId: null,
         threadId: null
       }
+    case c.EDIT_TOPIC:
+      return {
+        page: 'edit-topic',
+        topicId,
+        threadId: null
+      }
     default:
       return state;
   }
