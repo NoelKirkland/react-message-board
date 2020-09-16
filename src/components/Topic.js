@@ -18,7 +18,7 @@ function Topic(props){
           <h5 key={thread.id} onClick={()=> dispatch(a.viewThread(topic.id, thread.id))}>{thread.name}</h5>
         )
       })}
-      <Button variant='outline-primary' type='button' onClick={() => dispatch(a.createThread(topic.id))}>Add Thread to Topic</Button>
+      <Button className= "mr-2" variant='outline-primary' type='button' onClick={() => dispatch(a.createThread(topic.id))}>Add Thread to Topic</Button>
       <Button className = "mb-3 mt-3" variant='outline-warning' type='button' onClick={()=>dispatch(a.editTopic(topic.id))}>Edit Topic</Button>
       <Button className = "ml-2 mr-2" variant='outline-danger' type='button' onClick={handleDeleteTopic}>Delete Topic</Button>
       <Button variant="outline-success" onClick={()=> dispatch(a.viewIndex())}>Back to All Topics</Button>

@@ -45,6 +45,12 @@ export default (state=defaultState, action) => {
         topicId,
         threadId: null
       }
+    case c.EDIT_THREAD:
+      return {
+        page: 'edit-thread',
+        topicId: null,
+        threadId
+      }
     default:
       return state;
   }

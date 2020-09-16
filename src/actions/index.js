@@ -89,3 +89,9 @@ export const createThread = (topicId) => ({
   topicId,
   threadId: null
 });
+
+export const editThread = (threadId) => ({
+  type: c.EDIT_THREAD,
+  topicId: null,
+  threadId
+});

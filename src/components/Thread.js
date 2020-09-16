@@ -19,8 +19,10 @@ function Thread(props){
           </div>
         )
       })}
-      <Button variant='outline-success' onClick={()=>{dispatch(a.viewIndex())}}>Back To All Topics</Button>
-      <Button variant='outline-success' onClick={()=>{dispatch(a.viewTopic(thread.topicId))}}>Back To Topic</Button>
+      <Button variant='outline-info' onClick={()=>dispatch(a.editThread(thread.id))}>Edit This Thread</Button>
+      <Button className="ml-2" variant='outline-dark' onClick={()=>dispatch(a.deleteThread(thread.id))}>Delete This Thread</Button>
+      <Button className= " ml-2 mr-2" variant='outline-success' onClick={()=>{dispatch(a.viewIndex())}}>Back To All Topics</Button>
+      <Button variant='outline-info' onClick={()=>{dispatch(a.viewTopic(thread.topicId))}}>Back To Topic</Button>
     </React.Fragment>
   )
 }

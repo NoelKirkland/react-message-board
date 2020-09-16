@@ -16,6 +16,8 @@ export const CREATE_THREAD = "CREATE_THREAD";
 
 export const ADD_THREAD = "ADD_THREAD";
 
+export const EDIT_THREAD = "EDIT_THREAD";
+
 export const DELETE_THREAD = "DELETE_THREAD";
 
 export const ADD_POST = "ADD_POST";
