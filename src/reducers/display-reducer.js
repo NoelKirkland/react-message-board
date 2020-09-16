@@ -1,3 +1,5 @@
+import * as c from './../actions/ActionTypes';
+
 const defaultState = {
   page: 'index',
   topicId: null,
@@ -7,19 +9,19 @@ const defaultState = {
 export default (state=defaultState, action) => {
   const { topicId, threadId} = action;
   switch (action.type) {
-    case 'VIEW_INDEX':
+    case c.VIEW_INDEX:
       return {
         page: 'index',
         topicId: null,
         threadId: null
       }
-    case 'VIEW_TOPIC': 
+    case c.VIEW_TOPIC: 
       return {
         page: 'index',
         topicId,
         threadId: null
       }
-    case 'VIEW_THREAD':
+    case c.VIEW_THREAD:
       return {
         page: 'index',
         topicId,

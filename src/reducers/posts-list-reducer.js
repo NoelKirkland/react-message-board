@@ -1,3 +1,5 @@
+import * as c from './../actions/ActionTypes';
+
 const post1 = {
   title: "This should be in the first politics post",
   body: "That's where it should be, for sure",
@@ -12,7 +14,7 @@ const post1 = {
 export default (state = {post1}, action) => {
   const { title, body, date, score, id, threadId, topicId } = action;
   switch (action.type) {
-    case 'ADD_POST':
+    case c.ADD_POST:
       return Object.assign({}, state, {
         [id]: {
           title,
@@ -24,7 +26,7 @@ export default (state = {post1}, action) => {
           topicId
         }
       });
-    case 'DELETE_POST':
+    case c.DELETE_POST:
       const newState = {...state};
       delete newState[id];
       return newState;
