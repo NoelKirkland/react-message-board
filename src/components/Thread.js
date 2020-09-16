@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Button from 'react-bootstrap/Button';
+import * as a from './../actions/index';
 
 function Thread(props){
-  const { thread, postsList } = props;
+  const { thread, postsList, dispatch } = props;
   return (
     <React.Fragment>
       <h2>{thread.name}</h2>
@@ -18,8 +19,8 @@ function Thread(props){
           </div>
         )
       })}
-      <Button variant='outline-success' onClick={()=>{props.dispatch({type:"VIEW_INDEX"})}}>Back To All Topics</Button>
-      <Button variant='outline-success' onClick={()=>{props.dispatch({type:"VIEW_TOPIC",topicId:thread.topicId})}}>Back To Topic</Button>
+      <Button variant='outline-success' onClick={()=>{dispatch(a.viewIndex())}}>Back To All Topics</Button>
+      <Button variant='outline-success' onClick={()=>{dispatch(a.viewTopic(thread.topicId))}}>Back To Topic</Button>
     </React.Fragment>
   )
 }
