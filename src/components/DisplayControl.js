@@ -5,6 +5,7 @@ import store from './../store';
 import TopicIndex from './TopicIndex';
 import Topic from './Topic';
 import Thread from './Thread';
+import AddTopic from './AddTopic';
 
 function DisplayControl(props) 
 {
@@ -17,6 +18,8 @@ function DisplayControl(props)
     pageToDisplay = <Topic id = {topicId} />;
   } else if (page === 'index' && topicId && threadId) {
     pageToDisplay = <Thread id = {threadId} />
+  } else if (page === 'create-topic') {
+    pageToDisplay = <AddTopic />
   }
   return (
     <React.Fragment>

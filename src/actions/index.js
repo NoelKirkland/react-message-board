@@ -1,5 +1,11 @@
 import * as c from './ActionTypes';
 
+export const createTopic = () => ({
+  type: c.CREATE_TOPIC,
+  topicId: null,
+  threadId: null
+});
+
 export const addTopic = (newTopic) => {
   const { name, id } = newTopic;
   return ({

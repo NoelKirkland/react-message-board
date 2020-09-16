@@ -4,6 +4,8 @@ export const VIEW_TOPIC = "VIEW_TOPIC";
 
 export const VIEW_THREAD = "VIEW_THREAD";
 
+export const CREATE_TOPIC = "CREATE_TOPIC";
+
 export const ADD_TOPIC = "ADD_TOPIC";
 
 export const DELETE_TOPIC = "DELETE_TOPIC";

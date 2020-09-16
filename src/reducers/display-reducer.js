@@ -27,6 +27,12 @@ export default (state=defaultState, action) => {
         topicId,
         threadId
       }
+    case c.CREATE_TOPIC:
+      return {
+        page: 'create-topic',
+        topicId: null,
+        threadId: null
+      }
     default:
       return state;
   }
