@@ -12,7 +12,8 @@ describe('rootReducer', ()=>{
     expect(rootReducer({}, {type: null})).toEqual({
       topicsList: {},
       threadsList: {},
-      postsList: {}
+      postsList: {},
+      display: {page: 'index', topicId: null, threadId: null}
     });
   });
 
