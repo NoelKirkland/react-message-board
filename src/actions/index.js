@@ -52,6 +52,12 @@ export const deletePost = (id) => ({
   id
 });
 
+export const vote = (upVote, postId) => ({
+  type: c.VOTE,
+  up: upVote,
+  id: postId
+});
+
 
 //For updating Views
 export const viewIndex = () => ({

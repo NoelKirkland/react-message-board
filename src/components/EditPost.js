@@ -25,7 +25,7 @@ function EditPost(props) {
   return (
     <PostForm
       handleSubmitForm = {handleEditPost}
-      onLinkClick = {() => dispatch(a.viewThread(threadId))}
+      onLinkClick = {() => dispatch(a.viewThread(topicId, threadId))}
       buttonText = "Edit Post"
       postTitle = {title}
       postBody = {body} />

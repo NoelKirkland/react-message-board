@@ -1,12 +1,15 @@
 import React from 'react';
 import Header from './Header';
 import DisplayControl from './DisplayControl';
+import Container from 'react-bootstrap/Container';
 
 function App() {
   return (
     <React.Fragment>
       <Header />
-      <DisplayControl />
+      <Container>
+        <DisplayControl />
+      </Container>
     </React.Fragment>
   );
 }

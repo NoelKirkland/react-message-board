@@ -20,7 +20,7 @@ function AddPost(props) {
       topicId: thread.topicId
     }
     dispatch(a.addPost(newPost));
-    dispatch(a.viewThread(newPost.threadId));
+    dispatch(a.viewThread(newPost.topicId, newPost.threadId));
   }
   return (
     <PostForm

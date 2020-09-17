@@ -20,6 +20,15 @@ export default (state = {}, action) => {
       const newState = {...state};
       delete newState[id];
       return newState;
+    case c.VOTE:
+      const postToEdit = state[id];
+      let newPost;
+      if (action.up) {
+        newPost = { ...postToEdit, score: postToEdit.score + 1};
+      } else {
+        newPost = { ...postToEdit, score: postToEdit.score - 1};
+      }
+      return Object.assign({}, state, { [id]: newPost });
     default:
       return state;
   }

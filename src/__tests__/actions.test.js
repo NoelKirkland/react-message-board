@@ -88,4 +88,12 @@ describe('actions', ()=>{
       threadId: 1
     });
   });
+
+  it('vote should createa a VOTE action', ()=>{
+    expect(a.vote(true, 1)).toEqual({
+      type: c.VOTE,
+      up: true,
+      id: 1
+    });
+  });
 });
