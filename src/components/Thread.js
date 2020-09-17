@@ -14,6 +14,8 @@ function Thread(props){
 
   if (scoreSort) {
     postsList.sort((post1, post2) => post2.score - post1.score);
+  } else {
+    postsList.sort((post1, post2) => post1.date - post2.date)
   }
 
   const handleScoreSort = () => setScoreSort(!scoreSort);

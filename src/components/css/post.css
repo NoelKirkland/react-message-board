@@ -19,3 +19,7 @@
   bottom: 1px;
   right: 20px;
 }
+
+.post p {
+  margin-left: 10px;
+}

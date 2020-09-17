@@ -1,5 +1,6 @@
 import rootReducer from './reducers/index';
 import { createStore } from 'redux';
+import Moment from 'moment';
 
 const topic1 = {
   name: 'Politics',
@@ -22,7 +23,7 @@ const thread2 = {
 const post1 = {
   title: "This should be in the first politics post",
   body: "That's where it should be, for sure",
-  date: new Date().toString(),
+  date: new Moment(),
   score: 0,
   id: 'post1',
   threadId: 'thread1',

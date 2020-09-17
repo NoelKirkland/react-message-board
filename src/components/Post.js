@@ -9,13 +9,17 @@ import './css/post.css';
 function Post(props) {
   const { title, body, date, score } = props.postObject;
   const { onUpVote, onDownVote, onClickEdit } = props;
+  const dateObject = date.toObject();
+  const formattedTime = dateObject.hours + ':' + dateObject.minutes;
+  const formattedDate = dateObject.months + 1 + " " + dateObject.date + " " + dateObject.years;
   return (
     <React.Fragment>
       <div className='post'>
         <h5>{title}</h5>
         <Row>
           <Col md={3}>
-            <p>Posted on: {date}</p>
+            <p>Posted on: {formattedTime}</p>
+            <p>{formattedDate}</p>
             <p>Score: {score}</p>
           </Col>
           <Col>
