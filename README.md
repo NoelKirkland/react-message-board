@@ -27,14 +27,12 @@
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+The purpose of the project is to simulate a message board using purely functional components in React.js, using Redux to handle all necessary state.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -42,73 +40,39 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
+1. [Node.js](Node.js)
+2. A code editor
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
+1. First, you'll need a copy of the repo, by clicking the download button above.
+2. Grab the necessary packages with `npm install`
+3. Open a development version of the project with `npm start`, which will open in your browser automatically. If it doesn't, type `localhost:3000` into your browser's navigation bar. This version of the project will reload if you should make any changes to the code-base, so you can watch updates in real time.
+4. Alternately, get a production copy of the project with `npm run build`, which will create an .html file in the build folder. This version of the project will be more optimized, but will not update automatically as you edit the code-base.
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
-Explain how to run the automated tests for this system.
+Just run `npm test`, and let jest do the rest!
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+It should be fairly straightforward, just click the buttons.
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
-Add additional notes about how to deploy this on a live system.
+Build it, and it will come!
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Create React App](https://github.com/facebook/create-react-app) - Framework
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+- [Micheal Hansen](https://github.com/Sudolphus)
+- [Benjamin Russell](https://github.com/brussell36)
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+- Big thanks to all of you, the players!
