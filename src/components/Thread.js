@@ -3,35 +3,39 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import * as a from './../actions/index';
+import Post from './Post';
 
 function Thread(props){
   const { thread, postsList, dispatch } = props;
   return (
     <React.Fragment>
       <h2>{thread.name}</h2>
-      {postsList.map((post) => {
-        return (
-          <div key={post.id}>
-            <h5>{post.title}</h5>
-            <p>{post.body}</p>
-            <p>Posted on: {post.date}</p>
-            <p>Score: {post.score}</p>
-            <ButtonGroup size='sm'>
-              <Button variant='outline-success' onClick={()=>dispatch(a.vote(true, post.id))}>Upvote Post</Button>
-              <Button variant='outline-danger' onClick={()=>dispatch(a.vote(false, post.id))}>Downvote Post</Button>
-              <Button variant='outline-primary' onClick={()=>dispatch(a.editPost(post.id))}>Edit Post</Button>
-            </ButtonGroup>
-          </div>
-        )
-      })}
-      <ButtonGroup className="mt-3" vertical size='lg'>
-        <Button variant="outline-warning" onClick={()=>dispatch(a.createPost(thread.id))}>Create Post</Button>
-        <Button variant='outline-info' onClick={()=>dispatch(a.editThread(thread.id))}>Edit This Thread</Button>
-        <Button variant='outline-dark' onClick={()=>dispatch(a.deleteThread(thread.id))}>Delete This Thread</Button>
-        <Button variant='outline-success' onClick={()=>{dispatch(a.viewIndex())}}>Back To All Topics</Button>
-        <Button variant='outline-info' onClick={()=>{dispatch(a.viewTopic(thread.topicId))}}>Back To Topic</Button>
-      </ButtonGroup>
+      <Row>
+        <Col md={2}>
+          <ButtonGroup className="mt-3" vertical>
+            <Button variant="outline-warning" onClick={()=>dispatch(a.createPost(thread.id))}>Create Post</Button>
+            <Button variant='outline-info' onClick={()=>dispatch(a.editThread(thread.id))}>Edit This Thread</Button>
+            <Button variant='outline-dark' onClick={()=>dispatch(a.deleteThread(thread.id))}>Delete This Thread</Button>
+            <Button variant='outline-success' onClick={()=>{dispatch(a.viewIndex())}}>Back To All Topics</Button>
+            <Button variant='outline-info' onClick={()=>{dispatch(a.viewTopic(thread.topicId))}}>Back To Topic</Button>
+          </ButtonGroup>
+        </Col>
+        <Col md={10}>
+          {postsList.map((post) => {
+            return (
+              <Post
+                key={post.id}
+                postObject={post}
+                onUpVote={()=>dispatch(a.vote(true, post.id))}
+                onDownVote={()=>dispatch(a.vote(false, post.id))}
+                onClickEdit={()=>dispatch(a.editPost(post.id))} />
+            )
+          })}
+        </Col>
+      </Row>
     </React.Fragment>
   )
 }

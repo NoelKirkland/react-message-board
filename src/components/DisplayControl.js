@@ -37,7 +37,7 @@ function DisplayControl(props)
       pageToDisplay = <AddThread topicId = { topicId } />
       break;
     case 'edit-thread':
-      pageToDisplay = <EditThread threadId = { threadId} />
+      pageToDisplay = <EditThread id = { threadId } />
       break;
     case 'create-post':
       pageToDisplay = <AddPost id = {threadId} />

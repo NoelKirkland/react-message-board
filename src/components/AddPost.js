@@ -8,7 +8,8 @@ import v2 from 'uuid';
 function AddPost(props) {
   const { dispatch, thread } = props;
   const currentTime = new Date();
-  const date = currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds() + ", " + currentTime.getMonth()+1 + "-" + currentTime.getDay() + "-" + currentTime.getFullYear();
+  const dateDictionary = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const date = currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds() + ", " + dateDictionary[currentTime.getMonth()] + "-" + currentTime.getDate() + "-" + currentTime.getFullYear();
   const handleNewPost = (event) => {
     const newPost = {
       title: event.target.postTitle.value,
