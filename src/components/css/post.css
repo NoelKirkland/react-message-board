@@ -1,0 +1,21 @@
+.post {
+  border: 1px solid black;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.post h5 {
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+.post .col-md-3 {
+  border-right: 1px solid black;
+}
+
+.post .col .btn-group {
+  position: absolute;
+  bottom: 1px;
+  right: 20px;
+}

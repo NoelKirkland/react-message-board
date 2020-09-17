@@ -23,7 +23,7 @@ function PostForm(props) {
         </Form.Group>
         <Button variant='outline-success' type='submit'>{buttonText}</Button>
       </Form>
-      <Button variant='outline-secondary' type='button' onClick={onLinkClick}>Back</Button>
+      <Button className="mt-2" variant='outline-secondary' type='button' onClick={onLinkClick}>Back</Button>
     </React.Fragment>
   )
 }

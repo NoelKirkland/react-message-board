@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Button from 'react-bootstrap/Button';
@@ -10,12 +10,21 @@ import Post from './Post';
 
 function Thread(props){
   const { thread, postsList, dispatch } = props;
+  const [scoreSort, setScoreSort] = useState(false);
+
+  if (scoreSort) {
+    postsList.sort((post1, post2) => post2.score - post1.score);
+  }
+
+  const handleScoreSort = () => setScoreSort(!scoreSort);
+  
   return (
     <React.Fragment>
       <h2>{thread.name}</h2>
       <Row>
         <Col md={2}>
           <ButtonGroup className="mt-3" vertical>
+            <Button variant='outline-secondary' onClick={handleScoreSort}>Toggle Sort</Button>
             <Button variant="outline-warning" onClick={()=>dispatch(a.createPost(thread.id))}>Create Post</Button>
             <Button variant='outline-info' onClick={()=>dispatch(a.editThread(thread.id))}>Edit This Thread</Button>
             <Button variant='outline-dark' onClick={()=>dispatch(a.deleteThread(thread.id))}>Delete This Thread</Button>
